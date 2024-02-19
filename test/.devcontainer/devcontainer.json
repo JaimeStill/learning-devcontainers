@@ -1,0 +1,18 @@
+{
+    "name": "Air-Gapped Dev",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspace",
+    "forwardPorts": [
+        1433
+    ],
+    "portsAttributes": {
+        "1433": {
+            "label": "SQL Server"
+        }
+    },
+    "remoteEnv": {
+        "ASPNETCORE_ENVIRONMENT": "Container",
+        "NG_CLI_ANALYTICS": "false"
+    }
+}
