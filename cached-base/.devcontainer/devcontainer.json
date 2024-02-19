@@ -1,8 +1,8 @@
 {
     "name": "Air-Gapped Developer",
-    "dockerComposeFile": "docker-compose.yml",
-    "service": "app",
-    "workspaceFolder": "/workspace",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
     "features": {
         "ghcr.io/devcontainers/features/azure-cli:1": {},
         "ghcr.io/devcontainers/features/common-utils:2": {
@@ -40,27 +40,16 @@
                 ]
             },
             "extensions": [
-                "angular.ng-template",
-                "ms-azuretools.vscode-docker",
-                "ms-dotnettools.csharp",
-                "ms-dotnettools.vscode-dotnet-runtime",
-                "ms-vscode.powershell",
-                "rangav.vscode-thunder-client",
-                "spmeesseman.vscode-taskexplorer",
+                "${containerWorkspaceFolder}/.devcontainer/extensions/angular.ng-template.vsix",
+                "${containerWorkspaceFolder}/.devcontainer/extensions/ms-azuretools.vscode-docker.vsix",
+                "${containerWorkspaceFolder}/.devcontainer/extensions/ms-dotnettools.csharp.vsix",
+                "${containerWorkspaceFolder}/.devcontainer/extensions/ms-dotnettools.vscode-dotnet-runtime.vsix",
+                "${containerWorkspaceFolder}/.devcontainer/extensions/ms-vscode.powershell.vsix",
+                "${containerWorkspaceFolder}/.devcontainer/extensions/mssql-ubuntu-x64.vsix",
+                "${containerWorkspaceFolder}/.devcontainer/extensions/rangav.vscode-thunder-client.vsix",
+                "${containerWorkspaceFolder}/.devcontainer/extensions/spmeesseman.vscode-taskexplorer.vsix"
             ]
         }
     },
-    "forwardPorts": [
-        1433
-    ],
-    "portsAttributes": {
-        "1433": {
-            "label": "SQL Server"
-        }
-    },
-    "postCreateCommand": "bash .devcontainer/init.sh",
-    "remoteEnv": {
-        "ASPNETCORE_ENVIRONMENT": "Container",
-        "NG_CLI_ANALYTICS": "false"
-    }
+    "postCreateCommand": "bash .devcontainer/config.sh"
 }

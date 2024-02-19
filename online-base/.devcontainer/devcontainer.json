@@ -44,12 +44,12 @@
                 "ms-azuretools.vscode-docker",
                 "ms-dotnettools.csharp",
                 "ms-dotnettools.vscode-dotnet-runtime",
+                "ms-mssql.mssql",
                 "ms-vscode.powershell",
                 "rangav.vscode-thunder-client",
-                "spmeesseman.vscode-taskexplorer",
-                "${containerWorkspaceFolder}/mssql-1.22.1-ubuntu.16.04-x64.vsix"
+                "spmeesseman.vscode-taskexplorer"
             ]
         }
     },
-    "postCreateCommand": "bash .devcontainer/init.sh"
+    "postCreateCommand": "bash .devcontainer/config.sh"
 }
